@@ -8,7 +8,7 @@ docs/Manual.pdf - a step-by-step guide on how to install and use the Beachmeter 
 
 src/Beachmeter.1.2.py - the source of code; a Python script using ArcPy package by ESRI
 
-toolbox/Beachmeter.1.2.tbx - a ready-to-use ArcGIS (10.6 or higher) and ArcGIS Pro toolbox contains the Python script
+toolbox/Beachmeter.1.2.tbx - a ready-to-use ArcGIS (10.6 or higher) and ArcGIS Pro toolbox contains the Python script; read the Manual to know how to use it
 
 <b>Overview</b>
 
