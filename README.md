@@ -17,6 +17,6 @@ Use Beachmeter 1.2 free. Develop it by modifying the source code to fit it to yo
 
 If you need help, send me an email: patryk.sitkiewicz@ug.edu.pl
 
-The Beachmeter will be published as a scientific paper. Please cite it if you use it: 
+The Beachmeter is going to be published as a scientific paper. Please cite it if you use it: 
 
 Sitkiewicz P. (2024). Beachmeter – a simple tool for semi-automatic beach morphodynamics measurement.
