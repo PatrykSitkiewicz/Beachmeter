@@ -2,10 +2,10 @@
 # Name:        Beachmeter 1.2
 # Author:   Patryk Sitkiewicz
 # Created     02 December 2023
-# Cite it as:   Sitkiewicz P. (2023). Beachmeter - a simple tool for semi-automatic beach morphodynamics measurement
-# ArcGIS Pro Version:   3.2
+# Cite it as:   Sitkiewicz P. (2024). Beachmeter - a simple tool for semi-automatic beach morphodynamics measurement
+# tested in ArcGIS Pro Version:   3.2
 # Python Version:   3.9.18
-# This script version is meant to be used as a tool in the ArcGIS Pro by ESRI.
+# This script version is meant to be used in the ArcGIS by ESRI.
 #--------------------------------
 
 
