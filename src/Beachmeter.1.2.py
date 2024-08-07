@@ -1,8 +1,9 @@
 #--------------------------------
-# Name:        Beachmeter 1.2
+# Name:        Beachmeter 1.21
 # Author:   Patryk Sitkiewicz
 # Created     02 December 2023
-# Cite it as:   Sitkiewicz P. (2024). Beachmeter - a simple tool for semi-automatic beach morphodynamics measurement
+# Last update: 07 August 2024
+# Cite it as:   Sitkiewicz P. (2024). Beachmeter - a simple tool for semi-automatic beach morphodynamics measurement. SoftwareX
 # tested in ArcGIS Pro Version:   3.2
 # Python Version:   3.9.18
 # This script version is meant to be used in the ArcGIS by ESRI.
@@ -71,7 +72,7 @@ Output_waterline_1 = arcpy.management.DeleteFeatures(in_features=too_short_conto
 # Process: Smooth seaward contour (1) (Smooth Line) (cartography)
 before_waterline = arcpy.env.workspace + "\\" + shore_name + timestamp_before +"_sea_line"
 with arcpy.EnvManager(transferGDBAttributeProperties=False):
-    arcpy.cartography.SmoothLine(in_features=Output_waterline_1, out_feature_class=before_waterline, algorithm="PAEK", tolerance="2 Meters")
+    arcpy.cartography.SmoothLine(in_features=Output_waterline_1, out_feature_class=before_waterline, algorithm="PAEK", tolerance="2 Meters", error_option="RESOLVE_ERRORS")
 
 # ----- LANDWARD LIMIT -----
 # Process: draw landward contour (Contour) (3d)
@@ -87,13 +88,13 @@ Output_beach_landward_limit_2 = arcpy.management.DeleteFeatures(in_features=too_
 # Process: Smooth landward contour (2) (Smooth Line) (cartography)
 before_landward = arcpy.env.workspace + "\\" + shore_name + timestamp_before +"_land_line"
 with arcpy.EnvManager(transferGDBAttributeProperties=False):
-    arcpy.cartography.SmoothLine(in_features=Output_beach_landward_limit_2, out_feature_class=before_landward, algorithm="PAEK", tolerance="10 Meters")
+    arcpy.cartography.SmoothLine(in_features=Output_beach_landward_limit_2, out_feature_class=before_landward, algorithm="PAEK", tolerance="10 Meters", error_option="RESOLVE_ERRORS")
 
 # ----- SHORE BASELINE -----
 # Process: Smooth landward contour more to obtain a generalized shoreline (3) (Smooth Line) (cartography)
 shore_baseline = arcpy.env.workspace + "\\" + shore_name + "_baseline" 
 with arcpy.EnvManager(transferGDBAttributeProperties=False):
-    arcpy.cartography.SmoothLine(in_features=Output_beach_landward_limit_2, out_feature_class=shore_baseline, algorithm="PAEK", tolerance="500 Meters")
+    arcpy.cartography.SmoothLine(in_features=Output_beach_landward_limit_2, out_feature_class=shore_baseline, algorithm="PAEK", tolerance="500 Meters", error_option="RESOLVE_ERRORS")
 
 # Measure and print the length of the generalized shoreline
 with arcpy.da.SearchCursor(shore_baseline, "SHAPE@LENGTH") as cursor:
@@ -118,7 +119,7 @@ Output_waterline_3 = arcpy.management.DeleteFeatures(in_features=too_short_conto
 # Process: Smooth seaward contour (3) (Smooth Line) (cartography)
 after_waterline = arcpy.env.workspace + "\\" + shore_name + timestamp_after +"_sea_line"
 with arcpy.EnvManager(transferGDBAttributeProperties=False):
-    arcpy.cartography.SmoothLine(in_features=Output_waterline_3, out_feature_class=after_waterline, algorithm="PAEK", tolerance="2 Meters")
+    arcpy.cartography.SmoothLine(in_features=Output_waterline_3, out_feature_class=after_waterline, algorithm="PAEK", tolerance="2 Meters", error_option="RESOLVE_ERRORS")
 
 # ----- LANDWARD LIMIT -----
 # Process: draw landward contour (Contour) (3d)
@@ -134,7 +135,7 @@ Output_beach_landward_limit_4 = arcpy.management.DeleteFeatures(in_features=too_
 # Process: Smooth landward contour (4) (Smooth Line) (cartography)
 after_landward = arcpy.env.workspace + "\\" + shore_name + timestamp_after +"_land_line"
 with arcpy.EnvManager(transferGDBAttributeProperties=False):
-    arcpy.cartography.SmoothLine(in_features=Output_beach_landward_limit_4, out_feature_class=after_landward, algorithm="PAEK", tolerance="10 Meters")
+    arcpy.cartography.SmoothLine(in_features=Output_beach_landward_limit_4, out_feature_class=after_landward, algorithm="PAEK", tolerance="10 Meters", error_option="RESOLVE_ERRORS")
 
 
 # -------------------------------- 
