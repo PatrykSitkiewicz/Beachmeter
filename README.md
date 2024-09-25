@@ -14,6 +14,10 @@ toolbox/Beachmeter.1.2.tbx - a ready-to-use ArcGIS (10.6 or higher) and ArcGIS P
 
 Beachmeter is a Python script to automate the measurements of beaches based on a new delimitation method on digital elevation models (DEMs) of a coastal zone. It is developed to analyze multi-kilometre shorelines, especially in coastal monitoring. Filling out the Beachmeter form, the user inputs the raster DEMs from two measurement campaigns and information on the study site features. The Beachmeter delimits the beach boundaries and saves them as shapefiles. It creates beach elevation models, compares them to provide a differential map, and also measures the basic morphological parameters.
 
+<b>Keywords</b>
+
+Coastal monitoring, Beach morphodynamics, Shoreline changes, Coastal management, ArcGIS tool, Beach elevation model
+
 <b>License</b>
 
 Use Beachmeter 1.2 free. Develop it by modifying the source code to fit it to your work better. Add new features as you wish. If you achieve significant development of the Beachmeter, please send me your results so we can release a new version together. 
